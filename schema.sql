@@ -12,3 +12,9 @@ CREATE TABLE IF NOT EXISTS user_register (
     carrera VARCHAR(100) DEFAULT NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
+-- Agrega columnas para token QR y fecha de creación
+USE credencial_virtual;
+
+ALTER TABLE user_register
+  ADD COLUMN qr_token VARCHAR(64) DEFAULT NULL,
+  ADD COLUMN token_created_at DATETIME DEFAULT NULL;
